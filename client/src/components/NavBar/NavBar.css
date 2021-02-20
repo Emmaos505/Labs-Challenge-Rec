@@ -1,0 +1,16 @@
+.marca {
+    background-color: hotpink;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+
+
+}
+
+nav {
+    border: solid 2px blue;
+    height: 4em;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}

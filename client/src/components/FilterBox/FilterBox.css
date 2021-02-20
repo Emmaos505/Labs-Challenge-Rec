@@ -1,0 +1,7 @@
+.filtro-container {
+    background-color: hotpink;
+    height: 100vh;
+    width: 25%;
+    position: fixed;
+    top: 4em;
+}

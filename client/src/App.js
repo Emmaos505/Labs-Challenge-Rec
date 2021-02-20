@@ -1,14 +1,14 @@
 //import './App.css';
+import Home from "./Routes/Home";
 
 function App() {
   return (
-    <div>
-
-      La pagina está andando bien!
-
-    </div>
-
-  );
+    <>
+      <Home/>
+    </>
+);
 }
 
 export default App;
+
+

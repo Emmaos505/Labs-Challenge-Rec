@@ -1,0 +1,28 @@
+.busqueda {
+    font-size: 60px;
+    border: 1px solid red;
+    width: 100%;
+
+
+
+}
+
+.busqueda>input {
+    border: none;
+    font-weight: bold;
+    border: 1px solid blue;
+    width: 100%;
+}
+
+.busqueda>input:active {
+    border: none;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: rgba(128, 128, 128, 0.404)
+}
