@@ -13,8 +13,13 @@ const Home = () => {
     const [keyword, setKeyword] = useState('');
     const [productos, setProductos] = useState('');
 
+    // Para renderizar el spinner
     const [loading, setLoading] = useState(false);
 
+    // Para filtros
+    const [precio, setPrecio] = useState('Todos');
+    const [condicion, setCondicion] = useState('Todos');
+    
 
 
 
@@ -23,7 +28,7 @@ const Home = () => {
            <NavBar />
            <SearchBar keyword = {keyword} setKeyword = {setKeyword} 
            setProductos = {setProductos} setLoading = {setLoading} />
-           <FilterBox />
+           <FilterBox precio = {precio} condicion = {condicion} setPrecio = {setPrecio} setCondicion = {setCondicion} />
            <Catalogo productos = {productos} loading = {loading} />
 
         </div>
