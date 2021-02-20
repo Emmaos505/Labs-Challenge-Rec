@@ -19,7 +19,7 @@ const Home = () => {
     // Para filtros
     const [precio, setPrecio] = useState('Todos');
     const [condicion, setCondicion] = useState('Todos');
-    
+
 
 
 
@@ -29,7 +29,7 @@ const Home = () => {
            <SearchBar keyword = {keyword} setKeyword = {setKeyword} 
            setProductos = {setProductos} setLoading = {setLoading} />
            <FilterBox precio = {precio} condicion = {condicion} setPrecio = {setPrecio} setCondicion = {setCondicion} />
-           <Catalogo productos = {productos} loading = {loading} />
+           <Catalogo precio = {precio} productos = {productos} loading = {loading} />
 
         </div>
     )

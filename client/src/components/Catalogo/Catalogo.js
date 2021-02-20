@@ -4,13 +4,26 @@ import './Catalogo.css';
 import {Row, Col, Form, Button, Spinner} from 'react-bootstrap';
 
 
-const Catalogo = ({productos, loading}) => {
+const Catalogo = ({productos, loading, precio}) => {
    
     const [productosArenderizar, setProductosArenderizar] = useState([]);
 
     useEffect(() => {
-        setProductosArenderizar(productos)
-    }, [productos])
+        setProductosArenderizar(productos);
+
+        if (precio === "Baratos") {
+            var productosBackUp = productosArenderizar;
+            productosBackUp.sort(function (a, b) {
+                return a.price - b.price ;
+              });
+
+            setProductosArenderizar(productosBackUp);
+            
+        }
+        
+        
+        
+    }, [productos], [precio])
    
 
 
