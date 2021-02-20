@@ -6,7 +6,7 @@ import './SearchBar.css';
 
 
 
-const SearchBar = ({keyword, setKeyword, setProductos}) => {
+const SearchBar = ({keyword, setKeyword, setProductos, setLoading}) => {
     
     
     
@@ -18,8 +18,10 @@ const SearchBar = ({keyword, setKeyword, setProductos}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         getProducts(keyword)
-        .then(productos => setProductos(productos))
+        .then(productos => {setProductos(productos);
+        setLoading(false)})
         setKeyword('');
     }
 

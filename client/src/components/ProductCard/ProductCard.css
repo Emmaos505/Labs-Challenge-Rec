@@ -1,16 +1,16 @@
 .card {
-    border: 1px solid rgba(128, 128, 128, 0.404);
+    border: 1.5px solid rgba(128, 128, 128, 0.404);
     /* border-radius: 20px; */
     padding: 1.5em 3em;
     display: flex;
     align-items: center;
     height: 660px;
     background-color: transparent;
-    transition: background-color .5s ease-out;
+    transition: border .5s ease-out;
 }
 
 .card:hover {
-    background-color: rgba(128, 128, 128, 0.404);
+    border: 1.5px solid rgba(128, 128, 128, 0.699);
 }
 
 .titulo {

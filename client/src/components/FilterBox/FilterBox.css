@@ -1,7 +1,43 @@
-.filtro-container {
+/* .filtro-container {
     background-color: hotpink;
     height: 100vh;
     width: 25%;
     position: fixed;
     top: 4em;
+} */
+
+
+.titulo {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+.titulo-select-precio {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+
+.contenedor-filtros {
+    background-color: rgba(128, 128, 128, 0.247);
+
+}
+
+.contenedor-precio,
+.contenedor-condicion {
+    padding: 2rem;
+
+}
+
+select {
+    border: none;
+    background-color: transparent;
+}
+
+select:active,
+select:focus {
+    border: none;
+    outline: none;
 }
