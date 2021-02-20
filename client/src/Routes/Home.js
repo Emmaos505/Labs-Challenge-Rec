@@ -11,6 +11,7 @@ import SearchBar from '../components/SearchBar/SearchBar'
 const Home = () => {
 
     const [keyword, setKeyword] = useState('');
+    const [productos, setProductos] = useState('');
 
 
 
@@ -18,8 +19,9 @@ const Home = () => {
     return (
         <div>
            <NavBar />
-           <SearchBar keyword = {keyword} setKeyword = {setKeyword} />
-           <Catalogo />
+           <SearchBar keyword = {keyword} setKeyword = {setKeyword} 
+           setProductos = {setProductos} />
+           <Catalogo productos = {productos} />
 
         </div>
     )

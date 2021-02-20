@@ -1,5 +1,5 @@
 .marca {
-    background-color: hotpink;
+    /* background-color: hotpink; */
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
@@ -8,9 +8,54 @@
 }
 
 nav {
-    border: solid 2px blue;
+    /*   border: solid 2px blue; */
     height: 4em;
     vertical-align: middle;
     display: flex;
     align-items: center;
+    padding: 2rem 0 2rem 2rem;
+    /* background-color: blue; */
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.404);
+}
+
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* transition: border-bottom .5s ease-out; */
+
+a {
+    transform: scale(1);
+    color: black;
+    transition: transform .5s ease-out;
+}
+
+
+a:hover {
+    transform: scale(1.1);
+    color: black;
+}
+
+
+.ft-08 {
+    height: 4em;
+    /* border: 2px solid rgb(255, 16, 16); */
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 0 2rem;
+
+}
+
+
+.ft-08>p {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
 }

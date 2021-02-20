@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import getProducts from '../../services/getProducts';
 import './SearchBar.css';
 
 
 
 
-const SearchBar = ({keyword, setKeyword}) => {
+
+const SearchBar = ({keyword, setKeyword, setProductos}) => {
     
     
     
@@ -16,7 +18,8 @@ const SearchBar = ({keyword, setKeyword}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(keyword);
+        getProducts(keyword)
+        .then(productos => setProductos(productos))
         setKeyword('');
     }
 

@@ -3,6 +3,7 @@ const server = express();
 const morgan = require('morgan');
 require('dotenv').config();
 const routes = require('./routes/index.js');
+const corse = require('cors');
 
 
 
@@ -10,6 +11,7 @@ const routes = require('./routes/index.js');
 /****  Middelwares  ****/
 server.use(morgan('dev'));
 server.use(express.json());
+server.use(corse());
 
 
 
