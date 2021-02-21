@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductCard.css';
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 const ProductCard = ({ title, image, price, condition, stock }) => {
     return (
