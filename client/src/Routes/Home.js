@@ -11,6 +11,12 @@ import Paginacion from '../components/Pagination/Pagination.js';
 
 const Home = () => {
 
+
+    const scroll = () => {
+        const elemento = document.querySelector('#filtrosBusqueda');
+        elemento.scrollIntoView('smooth', 'end');
+    }
+
     const [keyword, setKeyword] = useState('');
     const [productos, setProductos] = useState('');
 
@@ -25,26 +31,55 @@ const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(30);  
 
-    // Get current posts(productos) Solamente de la pagina donde estemos parados
+/*     // Get current posts(productos) Solamente de la pagina donde estemos parados
     const indexOfLastProduct = currentPage * productsPerPage; 
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentPosts = productos.slice(indexOfFirstProduct, indexOfLastProduct);
+    const currentProducts = productos.slice(indexOfFirstProduct, indexOfLastProduct); */
 
     // Change page
     const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber)
+        setCurrentPage(pageNumber);
+        scroll();
     }
 
 
     return (
         <div>
-           <NavBar />
-           <SearchBar keyword = {keyword} setKeyword = {setKeyword} 
-           setProductos = {setProductos} setLoading = {setLoading} setPrecio = {setPrecio} setCondicion = {setCondicion}/>
-           <FilterBox precio = {precio} condicion = {condicion} setPrecio = {setPrecio} setCondicion = {setCondicion} />
-           <Catalogo precio = {precio} productos = {currentPosts} 
-           loading = {loading} condicion = {condicion} />
-           <Paginacion productsPerPage = {productsPerPage} totalProducts = {productos.length} paginate = {paginate} />
+           
+           <NavBar/>
+           
+           <SearchBar
+           keyword = {keyword}
+           setKeyword = {setKeyword}
+           setProductos = {setProductos}
+           setLoading = {setLoading}
+           setPrecio = {setPrecio}
+           setCondicion = {setCondicion}
+           />
+           
+           <FilterBox
+           precio = {precio}
+           condicion = {condicion}
+           setPrecio = {setPrecio}
+           paginate = {paginate}
+           setCondicion = {setCondicion}
+           />
+           
+           <Catalogo 
+           precio = {precio}
+           productos = {productos}
+           loading = {loading}
+           condicion = {condicion}
+           currentPage={currentPage}
+           productsPerPage={productsPerPage}
+           />
+           
+           <Paginacion 
+           productsPerPage = {productsPerPage} 
+           currentPage = {currentPage}
+           totalProducts = {productos.length}
+           paginate = {paginate}
+           />
 
         </div>
     )

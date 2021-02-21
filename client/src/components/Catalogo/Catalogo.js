@@ -4,9 +4,10 @@ import './Catalogo.css';
 import {Row, Col, Spinner} from 'react-bootstrap';
 
 
-const Catalogo = ({productos, loading, precio, condicion}) => {
+const Catalogo = ({productos, loading, precio, condicion, currentPage, productsPerPage}) => {
    
     const [productosArenderizar, setProductosArenderizar] = useState([]);
+
    
     // si ya esta seteada la condición, no se actualiza en funcion al seteo de los precios,
     // por eso me creo una dependencia para poder actualizarlo automáticamente
@@ -63,7 +64,10 @@ const Catalogo = ({productos, loading, precio, condicion}) => {
 
    
    
-   
+           // Get current posts(productos) Solamente de la pagina donde estemos parados
+           const indexOfLastProduct = currentPage * productsPerPage; 
+           const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+           const currentProducts = productosArenderizar.slice(indexOfFirstProduct, indexOfLastProduct);
    
    
    
@@ -86,7 +90,7 @@ const Catalogo = ({productos, loading, precio, condicion}) => {
     return (
         <Row className= "p-0 m-0 no-gutters">
            
-           {productosArenderizar && productosArenderizar.map((producto, index) => (
+           {currentProducts && currentProducts.map((producto, index) => (
                <ProductCard key = {index} title = {producto.title} image = {producto.thumbnail}
                price = {producto.price} condition = {producto.condition} stock = {producto.available_quantity} />
            ))} 
