@@ -55,6 +55,7 @@ const Home = () => {
            setLoading = {setLoading}
            setPrecio = {setPrecio}
            setCondicion = {setCondicion}
+           paginate = {paginate}
            />
            
            <FilterBox

@@ -6,7 +6,7 @@ import './SearchBar.css';
 
 
 
-const SearchBar = ({keyword, setKeyword, setProductos, setLoading, setPrecio, setCondicion}) => {
+const SearchBar = ({keyword, setKeyword, setProductos, setLoading, setPrecio, setCondicion, paginate}) => {
     
     
     
@@ -20,8 +20,13 @@ const SearchBar = ({keyword, setKeyword, setProductos, setLoading, setPrecio, se
         e.preventDefault();
         setLoading(true);
         getProducts(keyword)
-        .then(productos => {setProductos(productos);
-        setLoading(false); setPrecio('Todos'); setCondicion('Todos')})
+        .then(productos => {
+        setProductos(productos);
+        setLoading(false);
+        setPrecio('Todos');
+        setCondicion('Todos');
+        paginate(1);
+        })
         setKeyword('');
     }
 
