@@ -86,8 +86,8 @@ const Catalogo = ({productos, loading, precio, condicion}) => {
     return (
         <Row className= "p-0 m-0 no-gutters">
            
-           {productosArenderizar && productosArenderizar.map(producto => (
-               <ProductCard title = {producto.title} image = {producto.thumbnail}
+           {productosArenderizar && productosArenderizar.map((producto, index) => (
+               <ProductCard key = {index} title = {producto.title} image = {producto.thumbnail}
                price = {producto.price} condition = {producto.condition} stock = {producto.available_quantity} />
            ))} 
            
