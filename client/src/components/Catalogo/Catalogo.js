@@ -10,20 +10,32 @@ const Catalogo = ({productos, loading, precio}) => {
 
     useEffect(() => {
         setProductosArenderizar(productos);
+        
+        //if (precio === "Todos") return setProductosArenderizar(productos);
+
 
         if (precio === "Baratos") {
-            var productosBackUp = productosArenderizar;
-            productosBackUp.sort(function (a, b) {
+            var arregloOrdenado = [...productosArenderizar].sort(function (a, b) {
                 return a.price - b.price ;
-              });
-
-            setProductosArenderizar(productosBackUp);
+            });
+            
+            setProductosArenderizar(arregloOrdenado)
             
         }
         
+        if (precio === "Caros") {
+            var arregloOrdenado = [...productosArenderizar].sort(function (a, b) {
+                return b.price - a.price ;
+                
+              });
+
+            setProductosArenderizar(arregloOrdenado)
+            
+        }
+         
         
         
-    }, [productos], [precio])
+    }, [productos, precio])
    
 
 
