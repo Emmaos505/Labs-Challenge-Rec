@@ -27,9 +27,9 @@ const Home = () => {
         <div>
            <NavBar />
            <SearchBar keyword = {keyword} setKeyword = {setKeyword} 
-           setProductos = {setProductos} setLoading = {setLoading} />
+           setProductos = {setProductos} setLoading = {setLoading} setPrecio = {setPrecio} setCondicion = {setCondicion}/>
            <FilterBox precio = {precio} condicion = {condicion} setPrecio = {setPrecio} setCondicion = {setCondicion} />
-           <Catalogo precio = {precio} productos = {productos} loading = {loading} />
+           <Catalogo precio = {precio} productos = {productos} loading = {loading} condicion = {condicion} />
 
         </div>
     )

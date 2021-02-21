@@ -4,7 +4,7 @@ import './Catalogo.css';
 import {Row, Col, Form, Button, Spinner} from 'react-bootstrap';
 
 
-const Catalogo = ({productos, loading, precio}) => {
+const Catalogo = ({productos, loading, precio, condicion}) => {
    
     const [productosArenderizar, setProductosArenderizar] = useState([]);
 
@@ -32,10 +32,26 @@ const Catalogo = ({productos, loading, precio}) => {
             setProductosArenderizar(arregloOrdenado)
             
         }
+
+        if (condicion === "Nuevos") {
+            var arregloOrdenado = productos.filter(producto => {
+                return producto.condition === "new"
+            });
+
+            setProductosArenderizar(arregloOrdenado);
+        }
+        
+        if (condicion === "Usados") {
+            var arregloOrdenado = productos.filter(producto => {
+                return producto.condition !== "new"
+            });
+
+            setProductosArenderizar(arregloOrdenado);
+        }
          
         
         
-    }, [productos, precio])
+    }, [productos, precio, condicion])
    
 
 
