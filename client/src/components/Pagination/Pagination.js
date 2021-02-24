@@ -6,7 +6,7 @@ import './Pagination.css';
 
 
 
-const Paginacion = ({productsPerPage, totalProducts, paginate, currentPage}) => {
+const Paginacion = ({productsPerPage, totalProducts, paginate, currentPage, productos}) => {
     
     const pageNumbers = [];
 
@@ -36,29 +36,22 @@ const Paginacion = ({productsPerPage, totalProducts, paginate, currentPage}) => 
       
     }
 
- 
+    
     
     return (
-        <div className="container-general">
+        <div className = {`container-general ${productos[0] ? null : "d-none"}`} >
             <Row className="p-0 m-0">
                 <Col className="p-0 m-0">
-                    <Pagination className = "pagination-container">
-                        {/* <Pagination.First  className = "item-grow" /> */}
+                    <Pagination className = "m-0 pagination-container">
+                        
                         <Pagination.Prev onClick = {handlePrev} className = "item-grow" />
                         {pageNumbers[0] && pageNumbers.map((number,index) => (
             
                            <Pagination.Item id = {currentPage === number ? "active" : null} className = "item-grow" onClick = {() => paginate(number)} key = {index}>{number}</Pagination.Item>
                         ))}
             
-                        {/* <Pagination.Item>{10}</Pagination.Item>
-                        <Pagination.Item>{11}</Pagination.Item>
-                        <Pagination.Item active>{12}</Pagination.Item>
-                        <Pagination.Item>{13}</Pagination.Item>
-                        <Pagination.Item disabled>{14}</Pagination.Item>
-            
-                        <Pagination.Item>{20}</Pagination.Item> */}
                         <Pagination.Next onClick = {handleNext} className = "item-grow" />
-                        {/* <Pagination.Last className = "item-grow" /> */}
+
                     </Pagination>
                 </Col>
             </Row>

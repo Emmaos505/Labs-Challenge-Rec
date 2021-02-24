@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
-import Catalogo from '../components/Catalogo/Catalogo'
-import FilterBox from '../components/FilterBox/FilterBox.js'
-import NavBar from '../components/NavBar/NavBar'
-import SearchBar from '../components/SearchBar/SearchBar'
-import Paginacion from '../components/Pagination/Pagination.js';
+import Catalogo from '../../components/Catalogo/Catalogo'
+import FilterBox from '../../components/FilterBox/FilterBox.js'
+import NavBar from '../../components/NavBar/NavBar'
+import SearchBar from '../../components/SearchBar/SearchBar'
+import Paginacion from '../../components/Pagination/Pagination.js';
+import Footer from '../../components/Footer/Footer'
+import './Home.css';
 
 
 
@@ -18,7 +20,7 @@ const Home = () => {
     }
 
     const [keyword, setKeyword] = useState('');
-    const [productos, setProductos] = useState('');
+    const [productos, setProductos] = useState([]);
 
     // Para renderizar el spinner
     const [loading, setLoading] = useState(false);
@@ -31,10 +33,6 @@ const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(30);  
 
-/*     // Get current posts(productos) Solamente de la pagina donde estemos parados
-    const indexOfLastProduct = currentPage * productsPerPage; 
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = productos.slice(indexOfFirstProduct, indexOfLastProduct); */
 
     // Change page
     const paginate = (pageNumber) => {
@@ -42,9 +40,10 @@ const Home = () => {
         scroll();
     }
 
+    
 
     return (
-        <div>
+        <div className = "container-home">
            
            <NavBar/>
            
@@ -80,7 +79,12 @@ const Home = () => {
            currentPage = {currentPage}
            totalProducts = {productos.length}
            paginate = {paginate}
+           productos = {productos}
            />
+
+           <div className = "container-footer">
+               <Footer />
+           </div>
 
         </div>
     )

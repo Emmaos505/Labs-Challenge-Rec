@@ -53,6 +53,7 @@
     border-radius: 20px;
     padding: .2rem .8rem;
     height: auto;
+    text-align: center;
 }
 
 .condition {

@@ -3,6 +3,9 @@ import './ProductCard.css';
 import { Col } from 'react-bootstrap';
 
 const ProductCard = ({ title, image, price, condition, stock }) => {
+
+    //stock = 0;
+
     return (
         <Col xs={12} md={6} lg={4} /* className="mb-4" */>
             <div className="card">

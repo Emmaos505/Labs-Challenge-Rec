@@ -21,7 +21,7 @@ const FilterBox = ({ precio, condicion, setCondicion, setPrecio, paginate }) => 
 
 
     return (
-        <Row id="filtrosBusqueda" className="p-0 m-0 contenedor-filtros">
+        <Row id="filtrosBusqueda" className=" p-0 m-0 contenedor-filtros ">
             <Col className="p-0 m-0 d-flex justify-content-center">
                 <div className="contenedor-precio">
                     <h4 className="titulo-select-precio" >Precio</h4>
