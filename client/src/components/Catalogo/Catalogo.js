@@ -48,6 +48,8 @@ const Catalogo = ({productos, loading, precio, condicion, currentPage, productsP
     2. mayor a 0 --> b ocupa un lugar antes que a
     */
 
+    // divido los condicionales en dos use effects distintos porque sino, cuando ya está seteado el precio
+    // no puedo filtrarlos por condición
 
     useEffect(() => {
         if (precio === "Baratos") {
