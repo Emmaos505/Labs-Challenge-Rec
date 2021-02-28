@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import getProducts from '../../services/getProducts';
 import './SearchBar.css';
 
@@ -18,6 +18,8 @@ const SearchBar = ({keyword, setKeyword, setProductos, setLoading, setPrecio, se
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        if (keyword) {
         setLoading(true);
         getProducts(keyword)
         .then(productos => {
@@ -28,6 +30,7 @@ const SearchBar = ({keyword, setKeyword, setProductos, setLoading, setPrecio, se
         paginate(1);
         })
         setKeyword('');
+        }
     }
 
 

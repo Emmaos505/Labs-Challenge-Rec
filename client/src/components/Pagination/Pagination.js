@@ -39,7 +39,7 @@ const Paginacion = ({productsPerPage, totalProducts, paginate, currentPage, prod
     
     
     return (
-        <div className = {`container-general ${productos[0] ? null : "d-none"}`} >
+        <div className = {`container-general ${productos && productos[0] ? null : "d-none"}`} >
             <Row className="p-0 m-0">
                 <Col className="p-0 m-0">
                     <Pagination className = "m-0 pagination-container">

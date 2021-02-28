@@ -1,14 +1,18 @@
 const request = require('request');
+const validador = require('./validadorKeyword.js');
 
 var cache = {};
 
 
 const getProducts = async (req, res) => {
     
-    const {q} = req.query
-    var url = `https://api.mercadolibre.com/sites/MLA/search/?q=${q}`
+    const {q} = req.query;
+    const keyword = validador(q);
+    console.log(keyword);
+
+    var url = `https://api.mercadolibre.com/sites/MLA/search/?q=${keyword}`
     
-    if (cache[q]) return res.status(200).json(cache[q]);
+    if (cache[keyword]) return res.status(200).json(cache[keyword]);
 
     try {
         console.log("entre a hacer una request a la API de ML");
@@ -39,7 +43,7 @@ const getProducts = async (req, res) => {
                            
             });
 
-            cache[q] = arregloModificado;
+            cache[keyword] = arregloModificado;
                        
        
         }

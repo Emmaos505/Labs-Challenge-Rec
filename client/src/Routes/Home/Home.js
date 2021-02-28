@@ -77,7 +77,7 @@ const Home = () => {
            <Paginacion 
            productsPerPage = {productsPerPage} 
            currentPage = {currentPage}
-           totalProducts = {productos.length}
+           totalProducts = {productos && productos.length}
            paginate = {paginate}
            productos = {productos}
            />
