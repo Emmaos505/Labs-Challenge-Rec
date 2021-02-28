@@ -8,8 +8,7 @@ const getProducts = async (req, res) => {
     
     const {q} = req.query;
     const keyword = validador(q);
-    console.log(keyword);
-
+    
     var url = `https://api.mercadolibre.com/sites/MLA/search/?q=${keyword}`
     
     if (cache[keyword]) return res.status(200).json(cache[keyword]);
