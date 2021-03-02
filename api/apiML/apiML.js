@@ -9,6 +9,7 @@ const getProducts = async (req, res) => {
     const {q} = req.query;
     const keyword = validador(q);
     
+    
     var url = `https://api.mercadolibre.com/sites/MLA/search/?q=${keyword}`
     
     if (cache[keyword]) return res.status(200).json(cache[keyword]);
@@ -24,7 +25,7 @@ const getProducts = async (req, res) => {
             
             // si hay algo dentro de la props results, lo guardamos en un arreglo de objetos
             // con la estructura que pide el challenge    
-            body.results.map(producto => {
+            body.results.forEach(producto => {
                
                 var productDetail = {
                 

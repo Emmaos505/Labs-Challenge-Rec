@@ -7,7 +7,7 @@ const ProductCard = ({ title, image, price, condition, stock }) => {
     //stock = 0;
 
     return (
-        <Col xs={12} md={6} lg={4} /* className="mb-4" */>
+        <Col xs={12} md={6} lg={4}>
             <div className="card">
                 <p className="condition">{condition}</p>
                 <div className="title-container">
@@ -21,7 +21,6 @@ const ProductCard = ({ title, image, price, condition, stock }) => {
                         <p className="stock-nodisponible" >NO HAY STOCK</p>}
                     <h3 className="titulo price">${price}</h3>
                 </div>
-                {/* <p className="stock" >{stock}</p> */}
             </div>
         </Col>
     )

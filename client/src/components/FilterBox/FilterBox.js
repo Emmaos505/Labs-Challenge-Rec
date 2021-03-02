@@ -1,6 +1,6 @@
 import React from 'react';
 import './FilterBox.css';
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 const FilterBox = ({ precio, condicion, setCondicion, setPrecio, paginate }) => {
 

@@ -11,18 +11,19 @@ const Catalogo = ({productos, loading, precio, condicion, currentPage, productsP
    
     // si ya esta seteada la condición, no se actualiza en funcion al seteo de los precios,
     // por eso me creo una dependencia para poder actualizarlo automáticamente
-    const [perilla, setPerilla] = useState(false);
+    const [refreshPrice, setRefreshPrice] = useState(false);
 
     useEffect(() => {
         setProductosArenderizar(productos);
-        
+        setRefreshPrice(!refreshPrice);
+
         if (condicion === "Nuevos") {
             var arregloOrdenado = productos.filter(producto => {
                 return producto.condition === "new"
             });
             
             setProductosArenderizar(arregloOrdenado);
-            setPerilla(!perilla);
+            setRefreshPrice(!refreshPrice);
         }
         
         if (condicion === "Usados") {
@@ -31,7 +32,7 @@ const Catalogo = ({productos, loading, precio, condicion, currentPage, productsP
             });
             
             setProductosArenderizar(arregloOrdenado);
-            setPerilla(!perilla);
+            setRefreshPrice(!refreshPrice);
         }
         
         
@@ -69,7 +70,7 @@ const Catalogo = ({productos, loading, precio, condicion, currentPage, productsP
 
             setProductosArenderizar(arregloOrdenado)
         }
-    }, [precio, perilla])
+    }, [precio, refreshPrice])
 
 
 
