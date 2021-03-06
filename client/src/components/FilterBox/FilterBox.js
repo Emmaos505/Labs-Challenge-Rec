@@ -21,10 +21,10 @@ const FilterBox = ({ precio, condicion, setCondicion, setPrecio, paginate }) => 
 
 
     return (
-        <Row id="filtrosBusqueda" className=" p-0 m-0 contenedor-filtros ">
+        <Row id="filtrosBusqueda" className=" p-0 m-0 contenedor-filtros d-flex flex-column flex-sm-row">
             <Col className="p-0 m-0 d-flex justify-content-center">
                 <div className="contenedor-precio">
-                    <h4 className="titulo-select-precio" >Precio</h4>
+                    <h4 className="titulo-select-precio text-center" >Precio</h4>
                     <select value={precio} onChange={handlePrecio} name="" id="">
                         <option value="Todos">Todos los productos</option>
                         <option value="Baratos">Mas baratos</option>
@@ -34,7 +34,7 @@ const FilterBox = ({ precio, condicion, setCondicion, setPrecio, paginate }) => 
             </Col>
             <Col className="p-0 m-0 d-flex justify-content-center">
                 <div className="contenedor-condicion">
-                    <h4 className="titulo-select-precio" >Condicion</h4>
+                    <h4 className="titulo-select-precio text-center" >Condicion</h4>
                     <select value={condicion} onChange={handleCondicion} name="" id="">
                         <option value="Todos">Todos los productos</option>
                         <option value="Usados">Usados</option>

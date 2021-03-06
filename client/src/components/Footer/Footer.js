@@ -13,7 +13,7 @@ const Footer = () => {
                 </a> 
             </Col>
             <Col className = "d-flex justify-content-center flex-column align-items-center">
-                <p className = "texto-footer">Proyecto realizado por Emmanuel Otero Spesot</p>
+                <p className = "texto-footer text-center">Proyecto realizado por <br/> Emmanuel Otero Spesot</p>
                 <p className = "texto-footer">- 2021 -</p>
             </Col>
        </Row>

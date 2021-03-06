@@ -11,7 +11,7 @@ const NavBar = () => {
     return (
         <nav>
 
-            <a target="_blank" href="https://github.com/Emmaos505/Labs-Challenge-Rec">
+            <a href="#">
                 <span className="marca">
                     HenryLabs
                     </span>
