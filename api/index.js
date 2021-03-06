@@ -27,7 +27,7 @@ server.use('/api', routes);
 
 
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4000;
 
 server.listen(PORT, () => {
     console.log(`El server se ha iniciado correctamente en el puerto ${PORT}`)

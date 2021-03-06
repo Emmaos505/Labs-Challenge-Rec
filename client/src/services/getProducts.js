@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getProducts = (keyword) => {
     
-    const apiUrl = `http://localhost:4000/api/search/?q=${keyword}`
+    const apiUrl = `/api/search/?q=${keyword}`
     
     
     return axios.get(apiUrl)
